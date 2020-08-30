@@ -1,4 +1,10 @@
+import 'package:banksampah/cache/sharePref.dart';
+import 'package:banksampah/models/index.dart';
+import 'package:banksampah/screen/mainMenu.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info/package_info.dart';
+
+import '../login.dart';
 
 class Profile extends StatefulWidget {
   final Function signOut;
@@ -9,8 +15,34 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  var loaded = false;
+  String currentVersion;
+  versionCheck() async {
+    final PackageInfo info = await PackageInfo.fromPlatform();
+    currentVersion = info.version.trim();
+    pref.getUserInfo().then((value) {
+      setState(() {
+        userModel = value;
+      });
+    });
+  }
+
+  PostResult userModel;
+  Pref pref = Pref();
+
   signOut() {
-    widget.signOut();
+    pref.signOut();
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) => Login()),
+      ModalRoute.withName('/'),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    versionCheck();
   }
 
   @override
@@ -20,6 +52,13 @@ class _ProfileState extends State<Profile> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(color: Colors.black),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => MainMenu()));
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         title: Text(
           "PROFILE",
           style: TextStyle(
@@ -44,7 +83,7 @@ class _ProfileState extends State<Profile> {
                         width: 80,
                         child: CircleAvatar(
                           backgroundImage: AssetImage(
-                            "img/profile.png",
+                            "img/users.jpg",
                           ),
                         ),
                       ),
@@ -56,13 +95,15 @@ class _ProfileState extends State<Profile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Arlan Ariandi Trislis",
+                      userModel == null ? "" : "${userModel.nama}",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text("arlanariandi@gmail.com"),
+                    Text(
+                      userModel == null ? "" : "${userModel.noRekening}",
+                    ),
                   ],
                 )
               ],
@@ -247,7 +288,7 @@ class _ProfileState extends State<Profile> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Version 1.0.0",
+                            "Version $currentVersion",
                             style: TextStyle(
                               color: Colors.grey,
                             ),

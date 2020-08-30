@@ -1,4 +1,6 @@
+import 'package:banksampah/cache/sharePref.dart';
 import 'package:banksampah/screen/login.dart';
+import 'package:banksampah/screen/mainMenu.dart';
 import 'package:banksampah/themes/myColors.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,30 @@ class First extends StatefulWidget {
 }
 
 class _FirstState extends State<First> {
+  Pref pref = Pref();
+  cekLogin() {
+    pref.cekLogin().then((value) {
+      if (value == null) {
+        sessionSignOut();
+      } else {
+        sessionSignIn();
+      }
+    });
+  }
+
+  sessionSignIn() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => MainMenu()));
+  }
+
+  sessionSignOut() {}
+
+  @override
+  void initState() {
+    super.initState();
+    cekLogin();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -62,7 +62,56 @@ class _RiwayatState extends State<Riwayat> {
                           fontSize: 16,
                           color: MyColors.primary,
                         ),
-                      )
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Divider(
+                color: Colors.grey,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 10,
+              ),
+              height: 65,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.white,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Jual apa / ambil berapa",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "15 Juli 2020",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        "Rp.10.000",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: MyColors.primary,
+                        ),
+                      ),
                     ],
                   ),
                 ],

@@ -1,3 +1,5 @@
+import 'package:banksampah/cache/sharePref.dart';
+import 'package:banksampah/models/index.dart';
 import 'package:banksampah/screen/jenisSampah/botolKaca.dart';
 import 'package:banksampah/screen/jenisSampah/botolPlastik.dart';
 import 'package:banksampah/screen/jenisSampah/kardus.dart';
@@ -18,6 +20,23 @@ class MainMenu extends StatefulWidget {
 }
 
 class _MainMenuState extends State<MainMenu> {
+  userCheck() async {
+    pref.getUserInfo().then((value) {
+      setState(() {
+        userModel = value;
+      });
+    });
+  }
+
+  PostResult userModel;
+  Pref pref = Pref();
+
+  @override
+  void initState() {
+    super.initState();
+    userCheck();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,7 +66,7 @@ class _MainMenuState extends State<MainMenu> {
                 height: 24,
               ),
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (contex) => Profile()));
                 print("Profile");
               },
@@ -89,35 +108,12 @@ class _MainMenuState extends State<MainMenu> {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        "Rp. 100.000",
+                        userModel == null ? "Rp. 0" : "Rp. ${userModel.saldo}",
                         style: TextStyle(
                           fontSize: 25,
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                         ),
-                      ),
-                      SizedBox(height: 5),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            "Total Setor",
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.white70,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            "50 Kg",
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.yellowAccent,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
                       ),
                       SizedBox(height: 20),
                       Container(
@@ -342,19 +338,6 @@ class _MainMenuState extends State<MainMenu> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          // InkWell(
-                          //   onTap: () {
-                          //     print("Lihat semua");
-                          //   },
-                          //   child: Text(
-                          //     "Lihat Semua",
-                          //     style: TextStyle(
-                          //       color: MyColors.primary,
-                          //       fontSize: 13,
-                          //       fontWeight: FontWeight.bold,
-                          //     ),
-                          //   ),
-                          // ),
                         ],
                       ),
                       SizedBox(height: 8),

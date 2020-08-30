@@ -1,3 +1,4 @@
+import 'package:banksampah/custom/transferList.dart';
 import 'package:flutter/material.dart';
 
 class Transfer extends StatefulWidget {
@@ -49,34 +50,9 @@ class _TransferState extends State<Transfer> {
                         onTap: () {
                           print("bank-bri");
                         },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank BRI",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-bri.png",
-                                    height: 20,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                        child: TransferList(
+                          namabank: "Bank BRI",
+                          logobank: "img/bank-bri.png",
                         ),
                       ),
                       Container(
@@ -89,34 +65,9 @@ class _TransferState extends State<Transfer> {
                         onTap: () {
                           print("bank-bni");
                         },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank BNI",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-bni.png",
-                                    height: 20,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                        child: TransferList(
+                          namabank: "Bank BNI",
+                          logobank: "img/bank-bni.png",
                         ),
                       ),
                       Container(
@@ -129,234 +80,9 @@ class _TransferState extends State<Transfer> {
                         onTap: () {
                           print("bank-mandiri");
                         },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank Mandiri",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-mandiri.png",
-                                    height: 25,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Divider(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          print("bank-bca");
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank BCA",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-bca.png",
-                                    height: 20,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Divider(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          print("bank-bcasyariah");
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank BCA Syariah",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-bcasyariah.png",
-                                    height: 18,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Divider(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          print("bank-btpn");
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank BTPN",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-btpn.png",
-                                    height: 35,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Divider(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          print("bank-cimbniaga");
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank CIMB Niaga",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-cimbniaga.png",
-                                    height: 15,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
-                        child: Divider(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          print("bank-mega");
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Bank Mega",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    "img/bank-mega.png",
-                                    height: 35,
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Colors.grey,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                        child: TransferList(
+                          namabank: "Bank Mandiri",
+                          logobank: "img/bank-mandiri.png",
                         ),
                       ),
                       Container(
