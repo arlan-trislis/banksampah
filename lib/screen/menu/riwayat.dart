@@ -40,7 +40,7 @@ class _RiwayatState extends State<Riwayat> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Jual apa / ambil berapa",
+                    "Jual Botol Plastik",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -51,7 +51,7 @@ class _RiwayatState extends State<Riwayat> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "15 Juli 2020",
+                        "30 Agustus 2020",
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -89,7 +89,7 @@ class _RiwayatState extends State<Riwayat> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Jual apa / ambil berapa",
+                    "Ambil Tabungan",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
@@ -100,13 +100,13 @@ class _RiwayatState extends State<Riwayat> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "15 Juli 2020",
+                        "31 Agustus 2020",
                         style: TextStyle(
                           fontSize: 16,
                         ),
                       ),
                       Text(
-                        "Rp.10.000",
+                        "Rp.5.000",
                         style: TextStyle(
                           fontSize: 16,
                           color: MyColors.primary,

@@ -15,7 +15,6 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  var loaded = false;
   String currentVersion;
   versionCheck() async {
     final PackageInfo info = await PackageInfo.fromPlatform();
