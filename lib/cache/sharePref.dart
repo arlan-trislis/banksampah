@@ -40,6 +40,11 @@ class Pref {
     pref.remove(Pref.saldo);
   }
 
+  saldoUpdate() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString(Pref.saldo, saldo);
+  }
+
   Future<PostResult> getUserInfo() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     PostResult post = PostResult();

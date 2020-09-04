@@ -11,15 +11,15 @@ class First extends StatefulWidget {
 
 class _FirstState extends State<First> {
   Pref pref = Pref();
-  cekLogin() {
-    pref.cekLogin().then((value) {
-      if (value == null) {
-        sessionSignOut();
-      } else {
-        sessionSignIn();
-      }
-    });
-  }
+  // cekLogin() {
+  //   pref.cekLogin().then((value) {
+  //     if (value == null) {
+  //       sessionSignOut();
+  //     } else {
+  //       sessionSignIn();
+  //     }
+  //   });
+  // }
 
   sessionSignIn() {
     Navigator.pushReplacement(
@@ -31,7 +31,7 @@ class _FirstState extends State<First> {
   @override
   void initState() {
     super.initState();
-    cekLogin();
+    // cekLogin();
   }
 
   @override
